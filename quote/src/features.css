@@ -1,0 +1,42 @@
+
+.features-page { padding-bottom: 24px; }
+.top-links { margin-left: auto; display: flex; gap: 14px; font-size: 15px; }
+.top-links a { color: var(--muted); text-decoration: none; }
+.top-links a:hover { color: var(--text); }
+.filters { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin-bottom: 10px; }
+.filters input[type='search'] {
+  flex: 1 1 220px; min-width: 0; padding: 10px 14px; border: 1px solid var(--line); border-radius: 999px; background: var(--card);
+}
+.preset-chips { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
+.preset-chips button {
+  border: 1px solid var(--line); background: var(--card); border-radius: 999px; padding: 5px 12px; font-size: 14px;
+  display: inline-flex; align-items: center; gap: 6px;
+}
+.preset-chips button.on { border-color: var(--primary); background: var(--primary-soft); color: var(--primary); font-weight: 700; }
+.preset-chips .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+.legend { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 4px; }
+.group-title { font-size: 18px; margin: 22px 4px 8px; }
+.mods { display: grid; gap: 10px; grid-template-columns: repeat(auto-fill, minmax(min(250px, 100%), 1fr)); }
+.mod {
+  text-align: left; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px;
+  display: grid; gap: 6px;
+}
+.mod:hover, .mod.on { border-color: var(--primary); }
+.mod.on { box-shadow: 0 0 0 2px var(--primary-soft); }
+.mod .row1 { display: flex; gap: 8px; align-items: baseline; }
+.mod .name { font-weight: 700; font-size: 16px; flex: 1; }
+.mod .mprice { color: var(--money); font-weight: 700; font-size: 14px; white-space: nowrap; }
+.mod .desc { color: var(--muted); font-size: 13px; }
+.mod[disabled] { opacity: 0.55; cursor: default; }
+.chips { display: flex; gap: 4px; flex-wrap: wrap; }
+.chip { font-size: 12px; font-weight: 700; border-radius: 999px; padding: 1px 8px; border: 1px solid currentColor; }
+.chip.off { opacity: 0.55; font-weight: 600; border-style: dashed; }
+.chip.server { color: #2b66c4; }
+.chip.local { color: #0a7a5c; }
+.chip.admin { color: #94590a; }
+.chip.option { color: #6a46c9; }
+.chip.key { color: #646a7a; }
+.empty { color: var(--muted); padding: 24px 4px; }
+@media (max-width: 900px) {
+  .preview-toggle[hidden] { display: none; }
+}

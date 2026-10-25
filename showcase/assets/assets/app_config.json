@@ -1,0 +1,441 @@
+{
+  "app": {
+    "id": "showcase",
+    "name": "쇼케이스",
+    "primary": "#4A9FE0",
+    "theme": "dark",
+    "login_required": true
+  },
+  "tabs": [
+    {
+      "title": "진열장",
+      "icon": "shop",
+      "items": [
+        "gallery"
+      ]
+    },
+    {
+      "title": "홈",
+      "icon": "home",
+      "items": [
+        "summary_cards",
+        "notice_banner",
+        "calendar_booking/next",
+        "card_list/top",
+        "weather_card",
+        "board/recent",
+        "memo",
+        "ads"
+      ]
+    },
+    {
+      "title": "게시판",
+      "icon": "board",
+      "items": [
+        "board"
+      ]
+    },
+    {
+      "title": "채팅",
+      "icon": "chat",
+      "items": [
+        "chat"
+      ]
+    },
+    {
+      "title": "더보기",
+      "icon": "more",
+      "items": [
+        "friends",
+        "card_list",
+        "calendar_booking",
+        "ranking",
+        "minigame",
+        "iap",
+        "location_share",
+        "memo",
+        "help_qa",
+        "attendance",
+        "coupon",
+        "poll",
+        "member_card",
+        "checklist",
+        "inquiry",
+        "photo_album",
+        "event_rsvp",
+        "order",
+        "ledger",
+        "directory",
+        "timeclock",
+        "work_log",
+        "waitlist",
+        "dues",
+        "habit",
+        "market"
+      ]
+    }
+  ],
+  "modules": {
+    "gallery": {},
+    "splash_basic": {
+      "tagline": "앱짓 샘플 앱",
+      "lines": [
+        "모듈을 불러옵니다",
+        "화면을 맞춥니다"
+      ]
+    },
+    "onboarding": {},
+    "permission_sheet": {
+      "items": [
+        {
+          "key": "notifications",
+          "why": "새 소식·채팅 알림"
+        },
+        {
+          "key": "location",
+          "why": "지도에 내 위치 보기"
+        }
+      ]
+    },
+    "app_info": {
+      "company": "앱짓",
+      "email": "hello@appjit.co.kr",
+      "terms_version": 1
+    },
+    "dark_mode": {},
+    "force_update": {
+      "changelog": [
+        {
+          "version": "0.1.0",
+          "date": "2026-10-25",
+          "items": [
+            "쇼케이스 첫 판"
+          ]
+        }
+      ]
+    },
+    "noti_push": {},
+    "friends": {},
+    "chat": {
+      "photo": true
+    },
+    "memo": {
+      "card": true
+    },
+    "minigame": {
+      "games": [
+        "지뢰찾기",
+        "솔리테어",
+        "사천성"
+      ],
+      "win_points": 10
+    },
+    "help_qa": {
+      "title": "도움말",
+      "email": "hello@appjit.co.kr"
+    },
+    "notice_banner": {
+      "height": 150,
+      "seconds": 5
+    },
+    "weather_card": {
+      "kma_key": "",
+      "lat": 37.5665,
+      "lng": 126.978,
+      "place": "서울"
+    },
+    "ads": {
+      "banner_id": "",
+      "rewarded_id": "",
+      "home_banner": true,
+      "reward_points": 10,
+      "daily_rewards": 10
+    },
+    "location_share": {},
+    "login_kakao": {
+      "native_app_key": ""
+    },
+    "guest_browse": {
+      "label": "둘러보기"
+    },
+    "settings": {
+      "delete_account": true
+    },
+    "points": {
+      "name": "포인트",
+      "icon": "star"
+    },
+    "iap": {
+      "products": [
+        {
+          "id": "remove_ads",
+          "title": "광고 제거",
+          "kind": "remove_ads"
+        },
+        {
+          "id": "plus_month",
+          "title": "플러스 월 구독",
+          "kind": "subscription"
+        },
+        {
+          "id": "points_1000",
+          "title": "포인트 1,000",
+          "kind": "consumable",
+          "points": 1000
+        }
+      ]
+    },
+    "board": {
+      "categories": [
+        "자유",
+        "질문",
+        "정보"
+      ],
+      "card": true
+    },
+    "splash_night": {
+      "scene": "밤하늘",
+      "tagline": "앱짓 샘플 앱",
+      "lines": [
+        "모듈을 불러옵니다",
+        "화면을 맞춥니다"
+      ]
+    },
+    "tutorial": {},
+    "summary_cards": {
+      "title": "오늘"
+    },
+    "widget_android": {
+      "source": "summary_cards"
+    },
+    "map_basic": {
+      "naver_client_id": "",
+      "title": "지도",
+      "zoom": 14
+    },
+    "card_list": {
+      "title": "메뉴",
+      "layout": "grid",
+      "categories": [
+        "음료",
+        "디저트",
+        "행사"
+      ],
+      "card": true,
+      "card_title": "추천"
+    },
+    "calendar_booking": {
+      "title": "예약",
+      "slots": {
+        "open": "10:00",
+        "close": "20:00",
+        "minutes": 60,
+        "capacity": 1,
+        "closed": [],
+        "days_ahead": 30
+      },
+      "card": true
+    },
+    "i18n": {
+      "langs": [
+        "en"
+      ]
+    },
+    "login_email": {},
+    "ranking": {
+      "boards": [
+        {
+          "id": "score",
+          "title": "점수",
+          "unit": "점",
+          "periods": [
+            "day",
+            "week",
+            "month"
+          ],
+          "daily_cap": 1000
+        }
+      ]
+    },
+    "multi_device": {},
+    "login_google": {
+      "server_client_id": "",
+      "ios_client_id": "",
+      "android_client_id": ""
+    },
+    "login_naver": {
+      "client_id": "",
+      "client_secret": "",
+      "client_name": ""
+    },
+    "login_apple": {
+      "bundle_id": "",
+      "web_service_id": "",
+      "redirect_uri": ""
+    },
+    "login_phone": {},
+    "attendance": {
+      "title": "출석",
+      "qr": false,
+      "venue_code": ""
+    },
+    "coupon": {
+      "title": "쿠폰",
+      "coupons": [
+        {
+          "id": "welcome",
+          "title": "첫 방문 할인",
+          "desc": "처음 오신 분께",
+          "discount": "10%",
+          "valid_days": 30
+        }
+      ],
+      "staff_pin": "1111"
+    },
+    "poll": {
+      "who_creates": "admin",
+      "card": true
+    },
+    "inquiry": {
+      "categories": [
+        "이용 문의",
+        "결제",
+        "기타"
+      ]
+    },
+    "member_card": {
+      "tiers": [
+        {
+          "name": "실버",
+          "color": "#9AA0A6",
+          "points": 0
+        },
+        {
+          "name": "골드",
+          "color": "#E0A030",
+          "points": 1000
+        }
+      ]
+    },
+    "checklist": {
+      "lists": [
+        "할 일",
+        "장보기"
+      ],
+      "title": "할 일"
+    },
+    "photo_album": {
+      "who_uploads": "members"
+    },
+    "event_rsvp": {
+      "who_creates": "admin",
+      "card": true
+    },
+    "order": {
+      "table_no": true,
+      "menu": [
+        {
+          "id": 1,
+          "cat": "커피",
+          "title": "아메리카노",
+          "price": 4000,
+          "options": [
+            "따뜻하게",
+            "차갑게"
+          ]
+        },
+        {
+          "id": 2,
+          "cat": "커피",
+          "title": "카페라테",
+          "price": 4800
+        },
+        {
+          "id": 3,
+          "cat": "디저트",
+          "title": "치즈케이크",
+          "price": 6000
+        }
+      ]
+    },
+    "ledger": {
+      "_badges": [
+        "local"
+      ],
+      "categories": [
+        "식비",
+        "교통",
+        "생활",
+        "여가",
+        "기타"
+      ],
+      "income_categories": [
+        "월급",
+        "용돈",
+        "기타"
+      ]
+    },
+    "directory": {
+      "_badges": [
+        "server"
+      ],
+      "show_phone": true
+    },
+    "timeclock": {
+      "_badges": [
+        "server"
+      ],
+      "place_check": false,
+      "place": {
+        "lat": 37.5665,
+        "lng": 126.978,
+        "radius_m": 150
+      }
+    },
+    "work_log": {
+      "_badges": [
+        "server"
+      ],
+      "photo": true,
+      "comments": true
+    },
+    "waitlist": {
+      "_badges": [
+        "server"
+      ],
+      "title": "대기 번호",
+      "max_party": 8
+    },
+    "dues": {
+      "_badges": [
+        "server"
+      ],
+      "title": "회비",
+      "amount": 10000
+    },
+    "habit": {
+      "_badges": [
+        "local"
+      ],
+      "suggested": [
+        "물 8잔",
+        "걷기 30분",
+        "책 10쪽",
+        "일찍 자기"
+      ]
+    },
+    "market": {
+      "_badges": [
+        "server"
+      ],
+      "categories": [
+        "생활",
+        "옷",
+        "아이",
+        "책",
+        "전자",
+        "기타"
+      ]
+    }
+  }
+}

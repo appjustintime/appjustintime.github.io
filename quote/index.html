@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>앱 만들기 견적</title>
+    <meta name="description" content="필요한 기능을 고르면 앱 모양과 가격이 바로 바뀝니다." />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%278%27 fill=%27%233b7ddd%27/%3E%3Crect x=%2710%27 y=%276%27 width=%2712%27 height=%2720%27 rx=%273%27 fill=%27white%27/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="styles.css" />
+  <style>:root {
+  --site-bg: #ffffff;
+  --site-alt: #f4f6f9;
+  --site-card: #ffffff;
+  --site-line: #e1e4ea;
+  --site-text: #15171c;
+  --site-muted: #646a7a;
+  --site-primary: #2b66c4;
+  --site-primary-dark: #1f4f9c;
+  --site-primary-soft: #e8f0fc;
+  --site-money: #0a7a5c;
+  --site-warn: #94590a;
+  --site-radius: 16px;
+  --site-wrap: 1120px;
+}
+:where(.site-top,.site-foot) a{color:var(--site-primary);text-decoration:none}
+.wrap{ max-width: var(--site-wrap); margin: 0 auto; padding: 0 20px; }
+.btn{
+  display: inline-block; padding: 13px 22px; border-radius: 12px;
+  background: var(--site-primary); color: #fff; font-weight: 700; white-space: nowrap;
+  border: 1px solid var(--site-primary); transition: background .15s;
+}
+.btn:hover{ background: var(--site-primary-dark); text-decoration: none; }
+.btn-ghost{ background: transparent; color: var(--site-primary); }
+.btn-ghost:hover{ background: var(--site-primary-soft); }
+.btn-light{ background: #fff; color: var(--site-primary); border-color: #fff; }
+.btn-light:hover{ background: var(--site-primary-soft); }
+.btn-small{ padding: 8px 14px; font-size: 14px; border-radius: 10px; }
+.site-top{ position: sticky; top: 0; z-index: 10; background: rgba(255,255,255,.94); backdrop-filter: blur(8px); border-bottom: 1px solid var(--site-line); }
+.top-row{ display: flex; align-items: center; gap: 16px; min-height: 60px; }
+.logo{ display: flex; align-items: center; gap: 8px; font-weight: 800; font-size: 20px; color: var(--site-text); }
+.logo:hover{ text-decoration: none; }
+.logo-mark{ width: 26px; height: 26px; border-radius: 8px; background: var(--site-primary); position: relative; }
+.logo-mark::after{ content: ''; position: absolute; left: 8px; top: 5px; width: 10px; height: 16px; border-radius: 3px; background: #fff; }
+.site-nav{ margin-left: auto; display: flex; align-items: center; gap: 4px; }
+.site-nav a:not(.btn){ color: var(--site-muted); padding: 8px 10px; border-radius: 8px; font-size: 15px; white-space: nowrap; }
+.site-nav a:not(.btn):hover{ color: var(--site-text); background: var(--site-alt); text-decoration: none; }
+.site-nav a[aria-current="page"]{ color: var(--site-text); font-weight: 700; }
+.site-nav .btn{ margin-left: 8px; }
+.nav-toggle, .nav-btn{ display: none; }
+.site-top .wrap{ position: relative; }
+@media (max-width: 860px){.nav-btn{
+    display: block; margin-left: auto; width: 44px; height: 44px; border-radius: 10px; cursor: pointer; position: relative;
+  }
+.nav-toggle{
+    display: block; position: absolute; right: 20px; top: 8px; width: 44px; height: 44px; margin: 0; opacity: 0; z-index: 2; cursor: pointer;
+  }
+.nav-toggle:focus-visible + .nav-btn{ outline: 3px solid #f0a020; outline-offset: 2px; }
+.nav-toggle:checked + .nav-btn span{ background: transparent; }
+.nav-toggle:checked + .nav-btn span::before{ top: 0; transform: rotate(45deg); }
+.nav-toggle:checked + .nav-btn span::after{ top: 0; transform: rotate(-45deg); }
+.nav-btn span, .nav-btn span::before, .nav-btn span::after{
+    position: absolute; left: 10px; width: 20px; height: 2px; background: var(--site-text); content: ''; border-radius: 2px;
+  }
+.nav-btn span{ top: 21px; }
+.nav-btn span::before{ top: -6px; left: 0; }
+.nav-btn span::after{ top: 6px; left: 0; }
+.site-nav{
+    display: none; position: absolute; left: 0; right: 0; top: 60px; flex-direction: column; align-items: stretch;
+    background: #fff; border-bottom: 1px solid var(--site-line); padding: 8px 20px 16px; gap: 0;
+  }
+.site-nav a:not(.btn){ padding: 12px 4px; font-size: 16px; border-bottom: 1px solid var(--site-alt); border-radius: 0; }
+.site-nav .btn{ margin: 12px 0 0; text-align: center; }
+.nav-toggle:checked ~ .site-nav{ display: flex; }}
+.site-foot{ background: #10141b; color: #c3c8d2; padding: 40px 0 28px; margin-top: 0; }
+.site-foot a{ color: #e3e8f0; }
+.foot-row{ display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+.foot-brand{ font-weight: 800; font-size: 18px; color: #fff; margin-bottom: 6px; }
+.foot-brand span{ font-weight: 500; color: #8b93a3; font-size: 15px; margin-left: 4px; }
+.foot-line{ font-size: 14px; margin-bottom: 4px; }
+.site-foot .muted{ color: #8b93a3; }
+.foot-links{ display: flex; gap: 16px; flex-wrap: wrap; font-size: 14px; }
+.copy{ margin-top: 24px; padding-top: 16px; border-top: 1px solid #252b36; font-size: 13px; color: #8b93a3; }
+.site-top{position:relative;z-index:6}</style>
+</head>
+  <body>
+<header class="site-top">
+  <div class="wrap top-row">
+    <a class="logo" href="../index.html"><span class="logo-mark" aria-hidden="true"></span>앱짓</a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="메뉴 열기">
+    <label for="nav-toggle" class="nav-btn" aria-hidden="true"><span></span></label>
+    <nav class="site-nav" aria-label="메뉴"><a href="../gallery/">기능 진열장</a><a href="../presets.html">분야별 묶음</a><a href="../pricing.html">가격</a><a href="../faq.html">진행 방식</a><a href="../websites.html">웹사이트 제작</a><a href="../contact.html">문의</a><a class="btn btn-small" href="../quote/">앱 만들기 시작</a></nav>
+  </div>
+</header>
+<main id="main">
+@@BODY@@
+</main>
+<footer class="site-foot">
+  <div class="wrap foot-row">
+    <div>
+      <div class="foot-brand">앱짓 <span>AppJit</span></div>
+      <div class="foot-line">문의 <a href="mailto:hello@appjit.co.kr">hello@appjit.co.kr</a></div>
+      <div class="foot-line muted">사업자 정보는 사업자등록 뒤 적습니다.</div>
+    </div>
+    <nav class="foot-links" aria-label="약관">
+      <a href="../terms.html">이용약관</a><a href="../privacy.html">개인정보처리방침</a><a href="../refund.html">환불 규정</a>
+    </nav>
+  </div>
+  <div class="wrap copy">© 2026 AppJit. All rights reserved.</div>
+</footer>
+<footer class="site-foot">
+  <div class="wrap foot-row">
+    <div>
+      <div class="foot-brand">앱짓 <span>AppJit</span></div>
+      <div class="foot-line">문의 <a href="mailto:hello@appjit.co.kr">hello@appjit.co.kr</a></div>
+      <div class="foot-line muted">사업자 정보는 사업자등록 뒤 적습니다.</div>
+    </div>
+    <nav class="foot-links" aria-label="약관">
+      <a href="../terms.html">이용약관</a><a href="../privacy.html">개인정보처리방침</a><a href="../refund.html">환불 규정</a>
+    </nav>
+  </div>
+  <div class="wrap copy">© 2026 AppJit. All rights reserved.</div>
+</footer>
+
+</body>
+</html>
+    <header class="top">
+      <div class="brand"><span id="brandName"></span> <span style="font-weight:600;color:var(--muted)">앱 만들기</span></div>
+      <nav class="steps" id="steps" aria-label="단계"></nav>
+    </header>
+    <main class="layout">
+      <section class="panel" id="panel" aria-live="polite"></section>
+      <aside class="phone-wrap" id="phoneWrap" aria-label="미리보기">
+        <div class="phone">
+          <div class="phone-notch"></div>
+          <iframe id="preview" title="앱 미리보기" src="../showcase/?preview=1"></iframe>
+          <div class="phone-missing" id="previewMissing" hidden>
+            미리보기 판이 아직 없습니다
+          </div>
+        </div>
+        <p class="phone-note" id="phoneNote">고르는 대로 바뀝니다</p>
+      </aside>
+    </main>
+    <button class="preview-toggle" id="previewToggle" type="button" aria-controls="phoneWrap" aria-expanded="false">📱 미리보기</button>
+    <footer class="price" id="price">
+      <div class="price-main">
+        <span class="price-label">처음 비용</span>
+        <strong id="priceTotal">0원</strong>
+        <span class="price-float" id="priceFloat"></span>
+      </div>
+      <div class="price-sub">
+        <span>월 관리비 <b id="priceMonthly">0원</b></span>
+        <span>만드는 데 <b id="priceDays">-</b></span>
+        <button class="warn-chip" id="warnChip" type="button" hidden></button>
+      </div>
+      <div class="price-nav">
+        <button type="button" id="prevBtn" class="ghost">이전</button>
+        <button type="button" id="nextBtn" class="primary">다음</button>
+      </div>
+    </footer>
+    <script type="module" src="src/app.js"></script>
+  </body>
+</html>
