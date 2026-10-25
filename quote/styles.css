@@ -72,6 +72,11 @@ input:focus-visible, select:focus-visible, textarea:focus-visible, button:focus-
   box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.12);
 }
 .swatch.on { border-color: var(--text); }
+
+#colorPick { width: 36px; height: 36px; padding: 0; border: 2px solid var(--line); border-radius: 50%; background: none; cursor: pointer; overflow: hidden; }
+#colorPick::-webkit-color-swatch-wrapper { padding: 0; }
+#colorPick::-webkit-color-swatch { border: 0; border-radius: 50%; }
+#colorPick::-moz-color-swatch { border: 0; border-radius: 50%; }
 input[type='color'] { width: 44px; height: 36px; border: none; background: none; padding: 0; }
 
 .seg { display: inline-flex; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
@@ -112,12 +117,12 @@ input[type='color'] { width: 44px; height: 36px; border: none; background: none;
 .picker { margin-top: 12px; border-top: 1px solid var(--line); padding-top: 12px; }
 .picker h4 { margin: 10px 0 6px; font-size: 13px; color: var(--muted); }
 .pick-row {
-  display: flex; align-items: center; justify-content: space-between; gap: 10px;
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px;
   padding: 8px 0; border-bottom: 1px solid #f1f2f4;
 }
 .pick-row .name { font-weight: 600; }
 .pick-row .desc { font-size: 13px; color: var(--muted); }
-.pick-row .acts { display: flex; gap: 6px; flex-shrink: 0; }
+.pick-row .acts { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 6px; min-width: 0; }
 .small { font-size: 13px; padding: 6px 10px; border-radius: 8px; border: 1px solid var(--line); background: #fff; }
 .small.on { background: var(--primary); color: #fff; border-color: var(--primary); }
 .small:disabled { opacity: 0.4; cursor: default; }
@@ -154,6 +159,9 @@ table.quote tr.total td { font-weight: 800; border-top: 2px solid var(--text); b
 }
 [hidden] { display: none !important; }
 .phone-missing code { color: #fff; font-size: 12px; }
+.phone-start { border: 0; cursor: pointer; font-size: 17px; font-weight: 700; color: #fff; gap: 8px; }
+.phone-start small { display: block; font-size: 13px; font-weight: 400; color: #c9ccd4; }
+.phone-start:hover { background: #24262d; }
 .phone-note { color: var(--muted); font-size: 13px; margin: 0; }
 .preview-toggle { display: none; }
 
@@ -185,24 +193,31 @@ table.quote tr.total td { font-weight: 800; border-top: 2px solid var(--text); b
 @media (max-width: 900px) {
   .layout { grid-template-columns: minmax(0, 1fr); padding: 16px; }
   .phone-wrap {
-    display: none; position: fixed; inset: 0; z-index: 7; background: rgba(0, 0, 0, 0.55);
-    place-content: center; padding: 20px;
+    display: none; position: fixed; inset: 0; z-index: 7; background: rgba(10, 12, 16, 0.88);
+    place-content: center; padding: 20px; height: 100dvh;
   }
   .phone-wrap.open { display: grid; }
   .phone { width: min(340px, 86vw); height: min(700px, 76vh); }
-  .phone-note { color: #fff; }
+  .phone-note { color: #fff; background: rgba(0, 0, 0, 0.6); padding: 4px 12px; border-radius: 999px; justify-self: center; }
   .preview-toggle {
-    display: block; position: fixed; right: 16px; bottom: calc(var(--bar) + 14px); z-index: 8;
-    border: none; border-radius: 999px; padding: 12px 16px; background: var(--text); color: #fff; font-weight: 700;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    display: block; border: none; border-radius: 10px; padding: 11px 12px; background: var(--text); color: #fff; font-weight: 700;
   }
+  
+  .preview-toggle[aria-expanded="true"] { position: fixed; right: 16px; top: 16px; z-index: 8; }
+  .pick-row .acts { flex-basis: 100%; justify-content: flex-start; }
   .top { padding: 10px 16px; }
   .brand { display: none; }
-  .price { gap: 10px; padding: 0 12px; }
+  
+  .price { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-content: center; column-gap: 8px; row-gap: 0; padding: 0 12px; }
+  .price-main { grid-column: 1; grid-row: 1; }
+  .price-sub { grid-column: 1; grid-row: 2; }
+  .price-nav { grid-column: 2; grid-row: 1 / span 2; }
+  .price-main strong, .price-nav button { white-space: nowrap; }
   .price-main strong { font-size: 19px; }
   .price-label { display: none; }
   .price-sub { font-size: 12px; gap: 8px; }
   .price-sub span:nth-child(2) { display: none; }
-  .price-nav .ghost { display: none; }
+  .price-nav { gap: 6px; }
+  .price-nav .ghost { padding: 11px 12px; }
   .tab-row { grid-template-columns: 56px 1fr auto; }
 }

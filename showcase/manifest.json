@@ -1,11 +1,11 @@
 {
-    "name": "showcase",
-    "short_name": "showcase",
+    "name": "샘플 앱",
+    "short_name": "샘플 앱",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "기능을 눌러 바로 돌려 보는 샘플 앱",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

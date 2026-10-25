@@ -1,0 +1,1 @@
+export function won(e){return null==e?"따로 견적":0===e?"0원":e%1e4==0?`${(e/1e4).toLocaleString("ko-KR")}만 원`:e>1e4&&e%1e3==0?`${Math.floor(e/1e4)}만 ${e%1e4/1e3}천 원`:`${e.toLocaleString("ko-KR")}원`}export const defaultBadges=e=>(e.badges??[]).filter((e=>e.default||e.fixed));export const modulePrice=e=>e.in_base?null:(e.price??0)+defaultBadges(e).reduce(((e,o)=>e+(o.price??0)),0);

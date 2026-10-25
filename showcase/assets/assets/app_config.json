@@ -1,7 +1,7 @@
 {
   "app": {
     "id": "showcase",
-    "name": "쇼케이스",
+    "name": "샘플 앱",
     "primary": "#4A9FE0",
     "theme": "dark",
     "login_required": true

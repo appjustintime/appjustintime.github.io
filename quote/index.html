@@ -92,7 +92,6 @@
   </div>
 </header>
     <header class="top">
-      <div class="brand"><span id="brandName"></span> <span style="font-weight:600;color:var(--muted)">앱 만들기</span></div>
       <nav class="steps" id="steps" aria-label="단계"></nav>
     </header>
     <main class="layout">
@@ -100,7 +99,8 @@
       <aside class="phone-wrap" id="phoneWrap" aria-label="미리보기">
         <div class="phone">
           <div class="phone-notch"></div>
-          <iframe id="preview" title="앱 미리보기" src="../showcase/?preview=1"></iframe>
+          <iframe id="preview" title="앱 미리보기" src="about:blank" data-src="../showcase/?preview=1"></iframe>
+          <button type="button" class="phone-missing phone-start" id="previewStart">▶ 미리보기 켜기<small>고른 대로 바뀌는 폰 화면 — 처음 한 번 몇 MB를 받습니다</small></button>
           <div class="phone-missing" id="previewMissing" hidden>
             미리보기 판이 아직 없습니다
           </div>
@@ -108,10 +108,9 @@
         <p class="phone-note" id="phoneNote">고르는 대로 바뀝니다</p>
       </aside>
     </main>
-    <button class="preview-toggle" id="previewToggle" type="button" aria-controls="phoneWrap" aria-expanded="false">📱 미리보기</button>
     <footer class="price" id="price">
       <div class="price-main">
-        <span class="price-label">처음 비용</span>
+        <span class="price-label">제작비</span>
         <strong id="priceTotal">0원</strong>
         <span class="price-float" id="priceFloat"></span>
       </div>
@@ -121,6 +120,7 @@
         <button class="warn-chip" id="warnChip" type="button" hidden></button>
       </div>
       <div class="price-nav">
+        <button class="preview-toggle" id="previewToggle" type="button" aria-controls="phoneWrap" aria-expanded="false" aria-label="미리보기">📱</button>
         <button type="button" id="prevBtn" class="ghost">이전</button>
         <button type="button" id="nextBtn" class="primary">다음</button>
       </div>
