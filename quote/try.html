@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>앱 미리보기</title>
+    <meta name="description" content="고른 대로 만든 앱을 폰 화면으로 눌러 봅니다." />
+    <meta name="robots" content="noindex" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="try">
+    <main class="try-main">
+      <header class="try-head">
+        <span class="logo-letter" id="tryLogo"></span>
+        <div><b id="tryName">내 앱</b><span class="hint">미리보기 · 눌러 볼 수 있습니다</span></div>
+      </header>
+      <div class="phone">
+        <div class="phone-notch"></div>
+        <iframe id="preview" title="앱 미리보기" src="about:blank" data-src="../showcase/?preview=1"></iframe>
+        <div class="phone-missing" id="previewMissing" hidden>미리보기를 열지 못했습니다</div>
+      </div>
+      <a class="primary try-cta" id="tryBack" href="index.html">이 앱으로 견적 보기</a>
+    </main>
+    <script type="module" src="src/try.js"></script>
+  </body>
+</html>

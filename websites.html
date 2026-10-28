@@ -94,6 +94,6 @@
   </div>
   <div class="wrap copy">© 2026 AppJit. All rights reserved.</div>
 </footer>
-<script>(function(){if(!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches)return;var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});function mark(el,i){el.classList.add('rv');if(i)el.style.transitionDelay=Math.min(i,6)*70+'ms';io.observe(el)}document.querySelectorAll('main .band .wrap').forEach(function(w){[].forEach.call(w.children,function(k){if(k.children.length>1&&/grid|steps|shots/.test(k.className))[].forEach.call(k.children,mark);else mark(k,0)})})})();</script>
+<script>(function(){if(!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches)return;var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});function mark(el,i){el.classList.add('rv');if(i)el.style.transitionDelay=Math.min(i,6)*70+'ms';io.observe(el)}document.querySelectorAll('main .band .wrap').forEach(function(w){[].forEach.call(w.children,function(k){if(k.children.length>6&&/grid/.test(k.className))return;if(k.children.length>1&&/grid|steps|shots/.test(k.className))[].forEach.call(k.children,mark);else mark(k,0)})})})();</script>
 </body>
 </html>
