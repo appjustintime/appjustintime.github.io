@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="ko">
-<head>
+<head><meta name="robots" content="noindex, nofollow">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>웹사이트 제작 · 앱짓</title>
@@ -17,17 +17,22 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://appjustintime.github.io/websites.html">
 <meta name="theme-color" content="#2b66c4">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%278%27 fill=%27%233b7ddd%27/%3E%3Crect x=%2710%27 y=%276%27 width=%2712%27 height=%2720%27 rx=%273%27 fill=%27white%27/%3E%3C/svg%3E">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="favicon-48.png" sizes="48x48" type="image/png">
+<link rel="apple-touch-icon" href="appjit-icon-192.png">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <link rel="stylesheet" href="site.css">
 </head>
 <body>
 <a class="skip" href="#main">본문으로 건너뛰기</a>
 <header class="site-top">
   <div class="wrap top-row">
-    <a class="logo" href="index.html"><span class="logo-mark" aria-hidden="true"></span>앱짓</a>
+    <a class="logo" href="index.html" aria-label="앱짓 AppJIT"><svg xmlns="http://www.w3.org/2000/svg" viewBox="106 107.5 300 297" class="logo-mark" aria-hidden="true" focusable="false"><defs><mask id="aj-top" maskUnits="userSpaceOnUse" x="0" y="0" width="512" height="512"><rect width="512" height="512" fill="#fff"/><rect class="lg-ring" x="192" y="238" width="128" height="182" rx="36" fill="#000"/></mask><clipPath id="aj-top-c"><rect class="lg-barclip" x="96" y="80" width="320" height="100"/></clipPath></defs><g transform="translate(0 0.5)"><g mask="url(#aj-top)" fill="none" stroke="#518cff" stroke-width="40" stroke-linecap="round"><path class="lg-bar" d="M140 108 C 200 106, 300 108, 380 116 C 397 116.5, 397 141.5, 380 142 C 300 146, 200 152, 140 156 C 118 157, 118 107, 140 108 Z" fill="#518cff" stroke="none" clip-path="url(#aj-top-c)"/><g class="lg-roof"><path class="lg-leg lg-leg-l" d="M256,204 L126,384" pathLength="1"/><path class="lg-leg lg-leg-r" d="M256,204 L386,384" pathLength="1"/><circle class="lg-apex" cx="256" cy="204" r="20" fill="#518cff" stroke="none"/></g></g><path class="lg-phone" d="M228 254 H284 A20 20 0 0 1 304 274 V384 A20 20 0 0 1 284 404 H228 A20 20 0 0 1 208 384 V274 A20 20 0 0 1 228 254 Z M247 382 A9 9 0 1 0 265 382 A9 9 0 1 0 247 382 Z" fill="#0b0f17" fill-rule="evenodd"/></g></svg><span class="logo-word" aria-hidden="true">App<em>JIT</em></span><span class="logo-ko">앱짓</span></a>
     <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="메뉴 열기">
     <label for="nav-toggle" class="nav-btn" aria-hidden="true"><span></span></label>
-    <nav class="site-nav" aria-label="메뉴"><a href="gallery/">기능 진열장</a><a href="presets.html">분야별 묶음</a><a href="pricing.html">가격</a><a href="faq.html">진행 방식</a><a href="websites.html" aria-current="page">웹사이트 제작</a><a href="contact.html">문의</a><a class="btn btn-small" href="quote/">앱 만들기 시작</a></nav>
+    <nav class="site-nav" aria-label="메뉴"><a href="gallery/">기능 진열장</a><a href="presets.html">업종 예시</a><a href="pricing.html">가격</a><a href="faq.html">진행 방식</a><a href="websites.html" aria-current="page">웹사이트 제작</a><a href="contact.html">문의</a><a class="btn btn-small" href="quote/">앱 만들기 시작</a></nav>
   </div>
 </header>
 <main id="main">
@@ -37,7 +42,7 @@
   <h2>가게형</h2>
   <p>대문 · 메뉴·상품 · 영업시간·지도 · 문의 · 앱 내려받기 — 동네 가게·학원·헬스</p>
   <div class="tpl-frame"><iframe src="websites/shop/index.html" title="가게형 미리보기" loading="lazy"></iframe></div>
-  <ul class="chips"><li>메뉴·상품</li><li>위치 지도</li><li>공지</li><li>예약 빈칸</li><li>문의 양식</li><li>앱 내려받기 단추</li></ul>
+  <ul class="chips"><li>메뉴·상품</li><li>위치 지도</li><li>공지</li><li>예약 빈칸</li><li>문의 양식</li><li>앱 내려받기 버튼</li></ul>
   <p class="tpl-cost">이 예시 그대로 <b>27만 원</b> <span class="muted">(앱 제작비와 별도)</span></p>
   <a href="websites/shop/index.html" target="_blank" rel="noopener">새 창으로 크게 보기 →</a>
 </article>
@@ -45,19 +50,19 @@
   <h2>단체·동호회형</h2>
   <p>대문 · 공지 · 게시판 새 글 · 일정·신청 · 소개 · 가입(앱 내려받기)</p>
   <div class="tpl-frame"><iframe src="websites/club/index.html" title="단체·동호회형 미리보기" loading="lazy"></iframe></div>
-  <ul class="chips"><li>공지</li><li>게시판 새 글</li><li>예약 빈칸</li><li>위치 지도</li><li>문의 양식</li><li>앱 내려받기 단추</li></ul>
+  <ul class="chips"><li>공지</li><li>게시판 새 글</li><li>예약 빈칸</li><li>위치 지도</li><li>문의 양식</li><li>앱 내려받기 버튼</li></ul>
   <p class="tpl-cost">이 예시 그대로 <b>29만 원</b> <span class="muted">(앱 제작비와 별도)</span></p>
   <a href="websites/club/index.html" target="_blank" rel="noopener">새 창으로 크게 보기 →</a>
 </article>
 <article class="card tpl">
   <h2>앱 홍보형</h2>
-  <p>큰 대문 + 앱 기능 소개 + 내려받기 단추 — 앱이 주인공</p>
+  <p>큰 대문 + 앱 기능 소개 + 내려받기 버튼 — 앱이 주인공</p>
   <div class="tpl-frame"><iframe src="websites/promo/index.html" title="앱 홍보형 미리보기" loading="lazy"></iframe></div>
-  <ul class="chips"><li>메뉴·상품</li><li>위치 지도</li><li>공지</li><li>예약 빈칸</li><li>문의 양식</li><li>앱 내려받기 단추</li></ul>
+  <ul class="chips"><li>메뉴·상품</li><li>위치 지도</li><li>공지</li><li>예약 빈칸</li><li>문의 양식</li><li>앱 내려받기 버튼</li></ul>
   <p class="tpl-cost">이 예시 그대로 <b>27만 원</b> <span class="muted">(앱 제작비와 별도)</span></p>
   <a href="websites/promo/index.html" target="_blank" rel="noopener">새 창으로 크게 보기 →</a>
 </article></div>
-  <p class="note">위 미리보기는 예시 자료로 보입니다. 실제 웹은 손님 앱과 같은 서버의 자료를 읽습니다.</p>
+  <p class="note">위 미리보기는 예시 자료로 보입니다. 실제 웹은 고객 앱과 같은 서버의 자료를 읽습니다.</p>
 </div></section>
 <section class="band band-alt"><div class="wrap">
   <div class="grid2">
@@ -71,9 +76,9 @@
       <p class="note">서버 없이 웹만 만들 수도 있습니다. 그때는 글로 적은 메뉴와 메일 문의로 돕니다.</p></div>
     <div class="card"><h2>웹 기능 값</h2>
       <p>웹페이지 연동 <b>15만 원부터</b>에 대문·소개가 들어 있고, 아래 칸을 더합니다.</p>
-      <div class="tbl-wrap"><table class="tbl"><tbody><tr><th scope="row">대문<span class="m-desc">로고·이름·한 줄 소개·바로가기 단추</span></th><td class="num">기본 포함</td></tr><tr><th scope="row">소개<span class="m-desc">우리 이야기 글·사진</span></th><td class="num">기본 포함</td></tr><tr><th scope="row">메뉴·상품<span class="m-desc">카드 목록 — 앱 카드 목록이 있으면 같은 서버 자료, 없으면 글로 적은 목록</span></th><td class="num">+2만 원</td></tr><tr><th scope="row">위치 지도<span class="m-desc">지도 + 카카오맵·네이버 지도 길찾기, 영업시간</span></th><td class="num">+2만 원</td></tr><tr><th scope="row">문의 양식<span class="m-desc">이름·연락처·내용 → 관리자 웹에 쌓임(서버 없으면 메일 쓰기)</span></th><td class="num">+2만 원<span class="m-per">서버 판은 월 관리비</span></td></tr><tr><th scope="row">공지<span class="m-desc">앱 공지 배너·게시판 공지를 웹에도(읽기만)</span></th><td class="num">+2만 원</td></tr><tr><th scope="row">게시판 새 글<span class="m-desc">앱 게시판 새 글 목록(읽기만, 쓰기는 앱에서)</span></th><td class="num">+4만 원</td></tr><tr><th scope="row">예약 빈칸<span class="m-desc">앞으로 며칠 예약 가능한 칸(신청은 앱에서)</span></th><td class="num">+4만 원</td></tr><tr><th scope="row">앱 내려받기 단추<span class="m-desc">구글 플레이·앱 스토어 단추</span></th><td class="num">0원</td></tr></tbody></table></div></div>
+      <div class="tbl-wrap"><table class="tbl"><tbody><tr><th scope="row">대문<span class="m-desc">로고·이름·한 줄 소개·바로가기 버튼</span></th><td class="num">기본 포함</td></tr><tr><th scope="row">소개<span class="m-desc">우리 이야기 글·사진</span></th><td class="num">기본 포함</td></tr><tr><th scope="row">메뉴·상품<span class="m-desc">카드 목록 — 앱 카드 목록이 있으면 같은 서버 자료, 없으면 글로 적은 목록</span></th><td class="num">+2만 원</td></tr><tr><th scope="row">위치 지도<span class="m-desc">지도 + 카카오맵·네이버 지도 길찾기, 영업시간</span></th><td class="num">+2만 원</td></tr><tr><th scope="row">문의 양식<span class="m-desc">이름·연락처·내용 → 관리자 웹에 쌓임(서버 없으면 메일 쓰기)</span></th><td class="num">+2만 원<span class="m-per">서버 판은 월 관리비</span></td></tr><tr><th scope="row">공지<span class="m-desc">앱 공지 배너·게시판 공지를 웹에도(읽기만)</span></th><td class="num">+2만 원</td></tr><tr><th scope="row">게시판 새 글<span class="m-desc">앱 게시판 새 글 목록(읽기만, 쓰기는 앱에서)</span></th><td class="num">+4만 원</td></tr><tr><th scope="row">예약 빈칸<span class="m-desc">앞으로 며칠 예약 가능한 칸(신청은 앱에서)</span></th><td class="num">+4만 원</td></tr><tr><th scope="row">앱 내려받기 버튼<span class="m-desc">구글 플레이·앱 스토어 버튼</span></th><td class="num">0원</td></tr></tbody></table></div></div>
   </div>
-  <div class="card cta-card"><div><h2>앱과 웹을 함께</h2><p>견적 빌더의 [추가 › 웹페이지 연동]에서 틀과 칸을 고릅니다.</p></div><a class="btn" href="quote/">앱 만들기 시작</a></div>
+  <div class="card cta-card"><div><h2>앱과 웹을 함께</h2><p>앱 만들기의 [추가 › 웹페이지 연동]에서 틀과 칸을 고릅니다.</p></div><a class="btn" href="quote/">앱 만들기 시작</a></div>
 </div></section>
 </main>
 <footer class="site-foot">
@@ -89,5 +94,6 @@
   </div>
   <div class="wrap copy">© 2026 AppJit. All rights reserved.</div>
 </footer>
+<script>(function(){if(!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches)return;var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});function mark(el,i){el.classList.add('rv');if(i)el.style.transitionDelay=Math.min(i,6)*70+'ms';io.observe(el)}document.querySelectorAll('main .band .wrap').forEach(function(w){[].forEach.call(w.children,function(k){if(k.children.length>1&&/grid|steps|shots/.test(k.className))[].forEach.call(k.children,mark);else mark(k,0)})})})();</script>
 </body>
 </html>
