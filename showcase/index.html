@@ -1,46 +1,55 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head><meta name="robots" content="noindex, nofollow">
-  <!--
-    If you are serving your web app in a path other than the root, change the
-    href value below to reflect the base path you are serving from.
-
-    The path provided below has to start and end with a slash "/" in order for
-    it to work correctly.
-
-    For more details:
-    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
-
-    This is a placeholder for base href that will be replaced by the value of
-    the `--base-href` argument provided to `flutter build`.
-  -->
+  <!-- flutter build web --base-href 가 바꿈 -->
   <base href="/showcase/">
-
   <meta charset="UTF-8">
-  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="description" content="기능을 눌러 바로 돌려 보는 샘플 앱">
+  <meta name="theme-color" content="#4A9FE0">
 
-  <!-- iOS meta tags & icons -->
+  <!-- 홈 화면에 추가(아이폰 사파리·안드로이드 크롬) -->
+  <link rel="manifest" href="manifest.json">
   <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="샘플 앱">
-  <link rel="apple-touch-icon" href="icons/Icon-192.png">
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png"/>
+  <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="favicon.png">
 
   <title>샘플 앱</title>
-  <link rel="manifest" href="manifest.json">
+  <style>html, body { margin: 0; height: 100%; background: #000000; }</style>
+  <script>
+    // 안드로이드 크롬 설치 띠: 크롬이 주는 설치 요청을 잡아 두고 앱(core install_banner)이 [설치]를 누를 때 씀
+    window.addEventListener('beforeinstallprompt', function (e) {
+      e.preventDefault();
+      window.afInstallPrompt = e;
+      window.dispatchEvent(new Event('af-install-ready'));
+    });
+    window.addEventListener('appinstalled', function () { window.afInstallPrompt = null; window.afInstalled = true; });
+    // 앱(core install_banner.dart)이 묻는 것: 이미 홈 화면 앱인가 · 아이폰·아이패드 사파리인가 · 크롬 설치 요청이 왔나 · 다른 화면 안(미리보기)인가
+    window.afPwa = {
+      standalone: function () { return window.matchMedia('(display-mode: standalone)').matches || navigator.standalone === true || !!window.afInstalled; },
+      ios: function () {
+        var ua = navigator.userAgent, ios = /iPhone|iPad|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+        return ios && /Safari/.test(ua) && !/CriOS|FxiOS|EdgiOS|KAKAOTALK|NAVER|Instagram|FBAN|FBAV|Line\//.test(ua);
+      },
+      canInstall: function () { return !!window.afInstallPrompt; },
+      embedded: function () { try { return window.self !== window.top; } catch (e) { return true; } },
+      install: function () {
+        var p = window.afInstallPrompt;
+        if (!p) return Promise.resolve(false);
+        p.prompt();
+        return p.userChoice.then(function (c) { window.afInstallPrompt = null; return c.outcome === 'accepted'; });
+      }
+    };
+    // 오프라인 첫 화면(sw.js)
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () { navigator.serviceWorker.register('sw.js').catch(function () {}); });
+    }
+  </script>
 </head>
 <body>
-  <!--
-    You can customize the "flutter_bootstrap.js" script.
-    This is useful to provide a custom configuration to the Flutter loader
-    or to give the user feedback during the initialization process.
-
-    For more details:
-    * https://docs.flutter.dev/platform-integration/web/initialization
-  -->
   <script src="flutter_bootstrap.js" async></script>
 </body>
 </html>
