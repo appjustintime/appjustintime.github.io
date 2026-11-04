@@ -139953,32 +139953,35 @@ A.azp.prototype={
 gbt(){return"checklist"},
 gdF(){return B.cei},
 an(a){return this.cn0(a)},
-cn0(a6){var s=0,r=A.m(t.H),q=this,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b,a,a0,a1,a2,a3,a4,a5
-var $async$an=A.i(function(a7,a8){if(a7===1)return A.j(a8,r)
-for(;;)switch(s){case 0:a1=a6.b.ac("lists")
-a2=a6.d
-a3=a1.length===0?B.bEs:a1
-a4=new A.bj(B.cdd,$.T(),t.K5)
-a5=new A.azq(a2,a3,A.zJ(),a4)
-a5.bsS(a2,a3,null)
-a6.c.e.eY(a5,t.cv)
-a2=a6.gA7()
-p=a2==null?null:a2.h(0,"items")
-s=t.j.b(p)&&B.d.fg(a3,new A.bjZ(a5))?2:3
+cn0(a7){var s=0,r=A.m(t.H),q=this,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b,a,a0,a1,a2,a3,a4,a5,a6
+var $async$an=A.i(function(a8,a9){if(a8===1)return A.j(a9,r)
+for(;;)switch(s){case 0:a1=a7.b
+a2=a1.ac("lists")
+a3=a7.d
+a4=a2.length===0?B.bEs:a2
+a5=new A.bj(B.cdd,$.T(),t.K5)
+a6=new A.azq(a3,a4,A.zJ(),a5)
+a6.bsS(a3,a4,null)
+a7.c.e.eY(a6,t.cv)
+p=a1.a.h(0,"_demo")
+a1=a7.gA7()
+if(a1==null)a1=t.f.b(p)?p.S(0,t.N,t.X):null
+o=a1==null?null:a1.h(0,"items")
+s=t.j.b(o)&&B.d.fg(a4,new A.bjZ(a6))?2:3
 break
-case 2:a2=J.w(p),o=t.f,n=t.g,m=t.t,l=t.N,k=t.X
-case 4:if(!a2.l()){s=5
-break}j=a2.gm()
-s=o.b(j)?6:8
+case 2:a1=J.w(o),a3=t.f,n=t.g,m=t.t,l=t.N,k=t.X
+case 4:if(!a1.l()){s=5
+break}j=a1.gm()
+s=a3.b(j)?6:8
 break
 case 6:i=j.S(0,l,k)
 h=A.W(i.h(0,"list"))
 h=h==null?null:B.i.u(h)
 if(h==null)h=0
-g=B.h.ao(h,0,a3.length-1)
+g=B.h.ao(h,0,a4.length-1)
 h=A.W(i.h(0,"due"))
 f=h==null?null:B.i.u(h)
-h=a3[g]
+h=a4[g]
 e=A.d(i.h(0,"text"))
 d=J.h(i.h(0,"repeat"),!0)
 c=A.a([],m)
@@ -139991,17 +139994,17 @@ b=A.a3().E(0).E(864e8*f)
 b=""+A.Y(b)+"-"+B.e.U(B.h.n(A.J(b)),2,"0")+"-"+B.e.U(B.h.n(A.a_(b)),2,"0")}a=J.h(i.h(0,"star"),!0)
 a0=A.ag(i.h(0,"note"))
 s=9
-return A.c(a5.MY(0,h,e,c,b,a0==null?"":a0,d,a),$async$an)
+return A.c(a6.MY(0,h,e,c,b,a0==null?"":a0,d,a),$async$an)
 case 9:s=7
 break
 case 8:s=10
-return A.c(a5.jE(0,B.d.ga5(a3),A.d(j)),$async$an)
+return A.c(a6.jE(0,B.d.ga5(a4),A.d(j)),$async$an)
 case 10:case 7:s=4
 break
-case 5:case 3:a2=new A.bk0(q,a6,a5)
-a4.ai(a2)
-a6.e.push(new A.bk_(a5,a2))
-a2.$0()
+case 5:case 3:a1=new A.bk0(q,a7,a6)
+a5.ai(a1)
+a7.e.push(new A.bk_(a6,a1))
+a1.$0()
 return A.k(null,r)}})
 return A.l($async$an,r)},
 cL(a){return this.czN(a)},
@@ -194416,21 +194419,23 @@ A.aJ1.prototype={
 gbt(){return"memo"},
 gdF(){return B.ceH},
 an(a){return this.cnA(a)},
-cnA(a){var s=0,r=A.m(t.H),q,p,o,n,m,l,k
+cnA(a){var s=0,r=A.m(t.H),q,p,o,n,m,l,k,j
 var $async$an=A.i(function(b,c){if(b===1)return A.j(c,r)
-for(;;)switch(s){case 0:m=A.eIv(a)
-l=a.gA7()
-k=l==null?null:l.h(0,"notes")
-s=t.j.b(k)&&J.co(m.b.a)?2:3
+for(;;)switch(s){case 0:l=A.eIv(a)
+k=a.b.a.h(0,"_demo")
+j=a.gA7()
+if(j==null)j=t.f.b(k)?k.S(0,t.N,t.X):null
+q=j==null?null:j.h(0,"notes")
+s=t.j.b(q)&&J.co(l.b.a)?2:3
 break
-case 2:l=A.bk(k,0,t.z),q=J.w(l.a),p=l.b,l=new A.as(q,p,A.F(l).j("as<1>"))
-case 4:if(!l.l()){s=5
-break}o=l.c
-o=o>=0?new A.B(p+o,q.gm()):A.ai(A.aW())
-n=A.d(o.b)
+case 2:j=A.bk(q,0,t.z),p=J.w(j.a),o=j.b,j=new A.as(p,o,A.F(j).j("as<1>"))
+case 4:if(!j.l()){s=5
+break}n=j.c
+n=n>=0?new A.B(o+n,p.gm()):A.ai(A.aW())
+m=A.d(n.b)
 $.dU()
 s=6
-return A.c(m.Yd(0,n,A.a3().E(0).E(0-36e8*(o.a*5+1))),$async$an)
+return A.c(l.Yd(0,m,A.a3().E(0).E(0-36e8*(n.a*5+1))),$async$an)
 case 6:s=4
 break
 case 5:case 3:return A.k(null,r)}})
@@ -224647,7 +224652,7 @@ return A.c(m.$5(d,A.aO(l.h(0,"board")),B.h.ae(e,2),"\uc608\uc2dc",o.E(-2592e8)),
 case 9:s=10
 return A.c(m.$5(d,A.aO(l.h(0,"board")),e-g*30,"\uc608\uc2dc",o.E(-1728e9)),$async$$0)
 case 10:s=11
-return A.c(m.$5(d,A.aO(l.h(0,"board")),40+(4-g)*25,"\uc608\uc2dc",o.E(-864e8)),$async$$0)
+return A.c(m.$5(d,A.aO(l.h(0,"board")),40+g*25,"\uc608\uc2dc",o.E(-864e8)),$async$$0)
 case 11:s=5
 break
 case 6:s=3
